@@ -1,6 +1,8 @@
 # Pandora Saga Simulator  
 Character calculator for the game Pandora Saga  
 
+## Try here
+https://palvert.github.io/Pandora_saga_simulator/  
 
 ## ⌨️ Shortcut keys  
 
