@@ -44,7 +44,7 @@ Increase/decrease:
 ## ©️Copyrights  
 ■ 改造、再配布、ご自由にどうぞ。
 
-■ Feel free to modify and redistribute.  
+■ "Feel free to modify and redistribute."  
 
 
 ## ⭐Original author:  
