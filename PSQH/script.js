@@ -63,7 +63,7 @@ function sortTable(columnIndex) {
 
 function open_descr(tElement) {
   const frame = document.getElementById("html_qpage");
-  frame.src = `https://palvert.github.io/Pandora_saga_tools/qData/${tElement.innerText}.html`
+  frame.src = `qData/${tElement.innerText}.html`
 }
 
 sortTable(2);
