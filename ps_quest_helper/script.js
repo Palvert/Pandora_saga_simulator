@@ -63,7 +63,7 @@ function sortTable(columnIndex) {
 
 function open_descr(tElement) {
   const frame = document.getElementById("html_qpage");
-  frame.src = `ps_quest_helper/qdata/${tElement.innerText}.html`
+  frame.src = `https://palvert.github.io/Pandora_saga_tools/ps_quest_helper/qdata/${tElement.innerText}.html`
   console.log(`opening description: ps_quest_helper/qdata/${tElement.innerText}.html`)
 }
 
