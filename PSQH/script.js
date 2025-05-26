@@ -63,7 +63,7 @@ function sortTable(columnIndex) {
 
 function open_descr(tElement) {
   const frame = document.getElementById("html_qpage");
-  frame.src = `${tElement.innerText}/${tElement.innerText}.html`
+  frame.src = `psqh/${tElement.innerText}/${tElement.innerText}.html`
 }
 
 sortTable(2);
