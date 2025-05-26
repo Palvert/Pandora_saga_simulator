@@ -39,6 +39,11 @@ function updateFilters() {
   };
 }
 
+function isDifferentDay(savedDate) {
+  const today = new Date().toDateString();
+  return savedDate !== today;
+}
+
 // Apply filters to the table
 function applyFilters() {
   const rows = tbody.querySelectorAll('tr');
@@ -99,10 +104,11 @@ function initCompletionTracking() {
 
 // Create save code
 function createSaveCode() {
-  // No changes needed - it already includes completedQuests
   const saveState = {
-    ...currentFilters // Includes all filter properties
+    ...currentFilters,
+    saveDate: new Date().toDateString() // Add current date to save data
   };
+  
   const jsonString = JSON.stringify(saveState);
   const base64Code = btoa(unescape(encodeURIComponent(jsonString)));
   saveCodeInput.value = base64Code;
@@ -164,6 +170,9 @@ function loadFilters() {
     const jsonString = decodeURIComponent(escape(atob(base64Code)));
     const savedState = JSON.parse(jsonString);
     
+    // Store the saved date if it exists
+    const savedDate = savedState.saveDate || new Date().toDateString();
+    
     // Update filter values
     document.querySelector(`input[name="questType"][value="${savedState.questType}"]`).checked = true;
     charLevelInput.value = savedState.charLevel;
@@ -171,17 +180,22 @@ function loadFilters() {
     minGoldInput.value = savedState.minGold;
     minXPInput.value = savedState.minXP;
     
-    // Update completed quests in state
-    currentFilters.completedQuests = savedState.completedQuests || [];
+    // Handle completed quests - reset D-type if different day
+    currentFilters.completedQuests = (savedState.completedQuests || []).filter(quest => {
+      const row = [...tbody.querySelectorAll('tr')].find(r => {
+        return r.querySelector('.complete-btn')?.getAttribute('data-quest') === quest;
+      });
+      const questType = row?.querySelector('td:nth-child(7)')?.textContent.trim();
+      
+      // Keep if not Daily type or if same day
+      return questType !== 'D' || !isDifferentDay(savedDate);
+    });
     
-    // Apply filters
+    // Apply filters and refresh UI
     updateFilters();
     applyFilters();
+    refreshCompletionStates();
     
-    // Force refresh of completion states - this is the critical fix
-    setTimeout(() => {
-      refreshCompletionStates();
-    }, 50);
   } catch (e) {
     alert('Invalid save code!');
     console.error(e);
@@ -195,9 +209,17 @@ function refreshCompletionStates() {
     if (!button) return;
     
     const questName = button.getAttribute('data-quest');
+    const questType = row.querySelector('td:nth-child(7)').textContent.trim();
     const isCompleted = currentFilters.completedQuests.includes(questName);
     
-    // Update button and row appearance
+    // Special handling for Daily quests
+    if (questType === 'D' && isCompleted) {
+      button.classList.add('daily-reset');
+      setTimeout(() => {
+        button.classList.remove('daily-reset');
+      }, 2000);
+    }
+    
     button.classList.toggle('completed', isCompleted);
     row.classList.toggle('completed', isCompleted);
   });
