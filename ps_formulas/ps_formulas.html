@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Data: Saboteur</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="workspace">
+    <div><h1>Pandora Saga Formulas</h1></div>
+    <div class="block">
+      <div class="calc_title">
+        <img src="images/icons/wormbomb.png" width="50" height="50" alt="wormbomb">
+        <h3>Worm bomb damage:</h3>
+      </div>
+    </div>
+    <div class="block">
+      <div class="fields">
+        <label>LVL:</label>
+        <label>DEX:</label>
+        <label>INT:</label>
+        <label>TRAPS:</label>
+      </div>
+      <div class="fields">
+        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
+        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
+        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
+        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
+      </div>
+      <div class="field">
+        <div class="result_lbl">
+          <label>Result: </label>
+          <label" id="wb_result">0</label>
+          <label">Previous: </label>
+          <label" id="wb_prev_result">0</label>
+        </div>
+        <button id="wb_btn_calc">Calculate</button>
+      </div>
+    </div>
+    
+  </div>
+
+
+  
+  <div><div id="calc"></div></div>
+
+<script src="scripts/wormbomb.js"></script>
+
+
+</body>
+</html>
