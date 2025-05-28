@@ -5,14 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pandora Saga Tools</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <!-- This prevents FOUC -->
+        <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body> 
     <div>
         <div class="block"><img src="ps.png" alt="pandora_saga""></div>
         <div class="block"><h1>Pandora Saga Tools</h1></div>
         <div class="block"><button class="main_btn" onclick="location.href='ps_simulator/ps_simulator.html'">Simulator</button></div>
-        <div class="block"><button class="main_btn" onclick="location.href='psqh/psqh.html'">Quest Helper</button></div>        <div class="block"><button class="main_btn" onclick="location.href='psqh/psqh.html'">Quest Helper</button></div>
+        <div class="block"><button class="main_btn" onclick="location.href='psqh/psqh.html'">Quest Helper</button></div>
         <div class="block"><button class="main_btn" onclick="location.href='ps_formulas/ps_formulas.html'">Formulas</button></div>
     <div>
 </font></body>

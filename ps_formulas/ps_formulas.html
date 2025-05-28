@@ -2,50 +2,65 @@
 <html land="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>Data: Saboteur</title>
-  <link rel="stylesheet" href="style.css"/>
+
+  <!-- This prevents FOUC -->
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <title>PS Formulas</title>
 </head>
 <body>
   <div class="workspace">
     <div><h1>Pandora Saga Formulas</h1></div>
-    <div class="block">
-      <div class="calc_title">
+    <div class="container">
+
+      <div class="wb_title">
         <img src="images/icons/wormbomb.png" width="50" height="50" alt="wormbomb">
         <h3>Worm bomb damage:</h3>
       </div>
-    </div>
-    <div class="block">
-      <div class="fields">
-        <label>LVL:</label>
-        <label>DEX:</label>
-        <label>INT:</label>
-        <label>TRAPS:</label>
-      </div>
-      <div class="fields">
-        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
-        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
-        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
-        <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
-      </div>
-      <div class="field">
-        <div class="result_lbl">
-          <label>Result: </label>
-          <label" id="wb_result">0</label>
-          <label">Previous: </label>
-          <label" id="wb_prev_result">0</label>
+
+      <div class="wb_calc">
+        <div class="wb_1">
+          <label>LVL:</label>
+          <label>DEX:</label>
+          <label>INT:</label>
+          <label>TRAPS:</label>
         </div>
-        <button id="wb_btn_calc">Calculate</button>
+
+        <div class="wb_2">
+          <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
+          <input type="number" name="" id="wb_stat_dex" min="1" max="55" value="1">
+          <input type="number" name="" id="wb_stat_int" min="1" max="55" value="1">
+          <input type="number" name="" id="wb_skill_trap" min="0" max="55" value="0">
+        </div>
+
+        <div class="wb_3">
+
+          <div class="wb_lbl_result">
+            <div id="wb_lbl_res_1">
+              <label for="wb_result">Result:</label>
+              <label for="wb_prev_result">Previous:</label>
+              <label for="wb_difference">Difference:</label>
+            </div>
+            <div id="wb_lbl_res_2">
+              <label id="wb_result"></label>
+              <label id="wb_prev_result"></label>
+              <label id="wb_difference"></label>
+            </div>
+          </div>
+
+          <button id="wb_btn_calc" onclick="wb_calculate()">Calculate</button>
+        </div> 
+
+      </div>
+      <div class="formula">
+        <label style="color:gray">(LVL + (SKILL * 4) + (DEX * 8) + 140) * (1 + (MATK / 100))</label>
       </div>
     </div>
     
   </div>
-
-
-  
-  <div><div id="calc"></div></div>
-
-<script src="scripts/wormbomb.js"></script>
-
-
+ <script src="scripts/wormbomb.js"></script>
 </body>
+
 </html>
