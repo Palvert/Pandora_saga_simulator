@@ -342,3 +342,9 @@ button:hover {
     width: 100%;
   }
 }
+
+.need_list {
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 50px;
+}
