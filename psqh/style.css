@@ -12,7 +12,7 @@
 }
 
 /* ===== Base Styles ===== */
-body {
+.body_qlist {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 20px;
