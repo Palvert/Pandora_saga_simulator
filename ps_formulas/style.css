@@ -61,6 +61,12 @@ input {
     max-width: 414px;
 }
 
+/* table {
+    row-gap: 240px;
+} */
+
+/* ========= Worm Bomb Calculator ========== */
+
 .wb_title {
     display: flex;
     gap: 20px;
@@ -86,7 +92,8 @@ input {
 .wb_1 {
     display:flex;
     flex-direction:column;
-    justify-content: space-around;
+    justify-content: center;
+    row-gap: 14px;
 
     label {
         color: gray;
@@ -132,4 +139,76 @@ input {
 .formula {
     margin: 0px 10px 10px 22px;
     font-size: 10px;
+}
+
+
+/* ========= Mine Calculator ========== */
+
+.mine_title {
+    display: flex;
+    gap: 20px;
+    flex-basis: 100%;
+    border: 2px solid var(--border-dark);
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-radius: 6px 6px 0px 0px;
+    align-items: center;
+    justify-content: start;
+    padding: 4px 0px 4px 14px;
+}
+
+.mine_calc {
+    display:flex;
+    flex-direction: row;
+    flex-basis: calc(100% / 3);
+    gap: 10px;
+    padding: 22px;
+}
+
+.mine_1 {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    row-gap: 30px;
+
+    label {
+        color: gray;
+    }
+}
+
+.mine_2 {
+    display:flex;
+    flex-direction:column;
+    row-gap: 22px;
+}
+
+.mine_3 {
+    .mine_lbl_result {
+        font-size: 18px;
+        display:flex;
+        flex-direction: row;
+        row-gap: 20px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            padding: 0px 0px 22px 0px;
+        }
+
+        #mine_lbl_res_1 {
+            padding: 0px 0px 0px 20px;
+            color: gray;
+            max-width: 114px;
+        }
+        #mine_lbl_res_2 {
+            padding: 0px 0px 0px 8px;
+        }
+    }
+    
+    button {
+        width: 160px;
+        margin: 22px 0px 0px 20px;
+    }
 }

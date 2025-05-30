@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style.css">
 <title>Document</title>
 </head>
-<body style="background-color:rgb(65, 65, 65)"> <font face="Arial">
+<body style="background-color:#1e1e1e; font-family:Arial Rounded MT"> 
 <div style="color:rgb(200, 200, 200)">
 
     <img src="kaluna.png" height="190" width="190" alt="" title="">
@@ -14,21 +15,33 @@
     <p><span style="color: rgb(255, 255, 255)"><b>Caruna</b></span> on <span style="color: blue"><b>Confederation Road</b></span> (C-7)</p>
     <p>Need:</p><ul>
         <li>37 Level</li>
-        <table class="need_list">
+    </ul>
+    <table class="need_list">
+        <thead>
+            <tr>
+                <th><p>NEED</p></th>
+                <th><p>Item</p></th>
+                <th><p>qt.</p></th>
+            </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td><img class="item_ico" src="icons/SplinteredClaw.png" alt="SplinteredClaw"></td>
-                <td><p>Splintered claw - x5</p></td>
+                <td><p>Splintered claw</p></td>
+                <td id="column_quantity">5</td>
             </tr>
             <tr>
                 <td><img class="item_ico" src="icons/SharpFang.png" alt="SharpFang"></td>
-                <td><p>Sharp fang - x5</p></td>
+                <td><p>Sharp fang</p></td>
+                <td id="column_quantity">5</td>
             </tr>
             <tr>
                 <td><img class="item_ico" src="icons/DurableBone.png" alt="DurableBone"></td>
-                <td><p>Durable bone - x5</p></td>
+                <td><p>Durable bone</p></td>
+                <td id="column_quantity">5</td>
             </tr>
-        </table>
-    </ul>
+        </tbody>
+    </table>
     <p>Additional inforamtion:</p><ul>
         <li>Splintered claw - Bloody Bats Lv20, at night</li>
         <li>Sharp fang - Most snakes, e.g. Bibron's Boas Lv40, the Foothills of Mt. Jorito, H-7</li>

@@ -10,57 +10,111 @@
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <title>PS Formulas</title>
 </head>
-<body style="color:#151515">
+<body style="background-color:#151515">
   <div class="workspace">
     <div><h1>Pandora Saga Formulas</h1></div>
-    <div class="container">
+    <table>
+      <tbody>
+      <tr>
+        <td>
+          <div class="container">
 
-      <div class="wb_title">
-        <img src="images/icons/wormbomb.png" width="50" height="50" alt="wormbomb">
-        <h3>Worm bomb damage:</h3>
-      </div>
-
-      <div class="wb_calc">
-        <div class="wb_1">
-          <label>LVL:</label>
-          <label>DEX:</label>
-          <label>INT:</label>
-          <label>TRAPS:</label>
-        </div>
-
-        <div class="wb_2">
-          <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
-          <input type="number" name="" id="wb_stat_dex" min="1" max="55" value="1">
-          <input type="number" name="" id="wb_stat_int" min="1" max="55" value="1">
-          <input type="number" name="" id="wb_skill_trap" min="0" max="55" value="0">
-        </div>
-
-        <div class="wb_3">
-
-          <div class="wb_lbl_result">
-            <div id="wb_lbl_res_1">
-              <label for="wb_result">Result:</label>
-              <label for="wb_prev_result">Previous:</label>
-              <label for="wb_difference">Difference:</label>
+            <div class="wb_title">
+              <img src="images/icons/wormbomb.png" width="50" height="50" alt="wormbomb">
+              <h3>Worm bomb damage:</h3>
             </div>
-            <div id="wb_lbl_res_2">
-              <label id="wb_result"></label>
-              <label id="wb_prev_result"></label>
-              <label id="wb_difference"></label>
+
+            <div class="wb_calc">
+              <div class="wb_1">
+                <label>LVL:</label>
+                <label>DEX:</label>
+                <label>INT:</label>
+                <label>TRAPS:</label>
+              </div>
+
+              <div class="wb_2">
+                <input type="number" name="" id="wb_char_lvl" min="1" max="55" value="1">
+                <input type="number" name="" id="wb_stat_dex" min="1" max="150" value="1">
+                <input type="number" name="" id="wb_stat_int" min="1" max="150" value="1">
+                <input type="number" name="" id="wb_skill_trap" min="0" max="90" value="0">
+              </div>
+
+              <div class="wb_3">
+
+                <div class="wb_lbl_result">
+                  <div id="wb_lbl_res_1">
+                    <label for="wb_result">Result:</label>
+                    <label for="wb_prev_result">Previous:</label>
+                    <label for="wb_difference">Difference:</label>
+                  </div>
+                  <div id="wb_lbl_res_2">
+                    <label id="wb_result"></label>
+                    <label id="wb_prev_result"></label>
+                    <label id="wb_difference"></label>
+                  </div>
+                </div>
+
+                <button id="wb_btn_calc" onclick="wb_calculate()">Calculate</button>
+              </div> 
+
+            </div>
+            <div class="formula">
+              <label style="color:gray">(LVL + (SKILL * 4) + (DEX * 8) + 140) * (1 + (MATK / 100))</label>
             </div>
           </div>
+        </td>
+        <td>
+          <div class="container">
 
-          <button id="wb_btn_calc" onclick="wb_calculate()">Calculate</button>
-        </div> 
+            <div class="mine_title">
+              <img src="images/icons/mine.png" width="50" height="50" alt="wormbomb">
+              <h3>Mine damage:</h3>
+            </div>
 
-      </div>
-      <div class="formula">
-        <label style="color:gray">(LVL + (SKILL * 4) + (DEX * 8) + 140) * (1 + (MATK / 100))</label>
-      </div>
-    </div>
+            <div class="mine_calc">
+              <div class="mine_1">
+                <label>LVL:</label>
+                <label>DEX:</label>
+                <label>TRAPS:</label>
+              </div>
+
+              <div class="mine_2">
+                <input type="number" name="" id="mine_char_lvl" min="1" max="55" value="1">
+                <input type="number" name="" id="mine_stat_dex" min="1" max="55" value="1">
+                <input type="number" name="" id="mine_skill_trap" min="0" max="55" value="0">
+              </div>
+
+              <div class="mine_3">
+
+                <div class="mine_lbl_result">
+                  <div id="mine_lbl_res_1">
+                    <label for="mine_result">Result:</label>
+                    <label for="mine_prev_result">Previous:</label>
+                    <label for="mine_difference">Difference:</label>
+                  </div>
+                  <div id="mine_lbl_res_2">
+                    <label id="mine_result"></label>
+                    <label id="mine_prev_result"></label>
+                    <label id="mine_difference"></label>
+                  </div>
+                </div>
+
+                <button id="mine_btn_calc" onclick="mine_calculate()">Calculate</button>
+              </div> 
+
+            </div>
+            <div class="formula">
+              <label style="color:gray">LVL + (DEX * 3.5) + (SKILL * 0.7) + 48</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
     
   </div>
- <script src="scripts/wormbomb.js"></script>
+  <script src="scripts/wormbomb.js"></script>
+  <script src="scripts/mine.js"></script>
 </body>
 
 </html>

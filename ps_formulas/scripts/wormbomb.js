@@ -1,3 +1,8 @@
+//================================================================================
+// Worm bomb calculator
+//================================================================================
+// (LVL + (SKILL * 4) + (DEX * 8) + 140) * (1 + (MATK / 100))
+
 function get_by_id(id) {
     element = document.getElementById(id);
     return element ? element : console.log(`something's wrong ${id} is '${element}'`);
@@ -47,7 +52,7 @@ function wb_calculate() {
     }
     
     // calc the new result
-    result = ( (lvl + (skill * 4.0) + (dex * 8.0) + 140.0) * (1.0 + (matk / 100.0)) ).toFixed(2);
+    result = Math.trunc( (lvl + (skill * 4.0) + (dex * 8.0) + 140.0) * (1.0 + (matk / 100.0)) );
 
     let difference = "";
     if (prev_result > 0) { // count the difference of the presults
@@ -55,14 +60,12 @@ function wb_calculate() {
     }
 
     // set label colors depndently  
-    if (result > prev_result) {
+    if (difference > 0) {
         get_by_id("wb_result").style.color = "lime";
-    } else { 
+    } else if (difference < 0) {
         get_by_id("wb_result").style.color = "red";
     }
 
     get_by_id("wb_result").textContent = result;
     get_by_id("wb_difference").textContent = difference;
-    
 }
-
