@@ -353,7 +353,7 @@ button:hover {
   }
   th {
     background-color: var(--need_list_bg_h);
-    height: 30px;
+    font-size: 12px;
   }
   td {
     padding: 6px 10px 2px 10px;
