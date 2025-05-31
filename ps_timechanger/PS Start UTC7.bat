@@ -25,7 +25,7 @@ IF %ERRORLEVEL%==1 (
 	
 	::revert time after the delay (sec.)
 	ECHO --------------------------------------------
-	ECHO Time will be reverted after:
+	ECHO Time will be reverted in:
 	timeout /t %REVERT_DELAY%
 	tzutil /s %TIME_LOCAL%
 	ECHO Local time is reverted.
