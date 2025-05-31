@@ -1,0 +1,122 @@
+:root {
+    --bg-dark: #121212;
+    --panel-dark: #1e1e1e;
+    --text-light: #e0e0e0;
+    --accent-red: #550505;
+    --border-dark: #333;
+    --hover-dark: #2a2a2a;
+    --input-dark: #252525;
+    --header-red: #550505;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: "verdana";
+    display:flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5 {
+    color: darkgray;
+}
+
+.tlayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    alight-content: start;
+}
+
+
+
+.skill_tree {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-collapse: collapse;
+    width: 1%;
+    text-align: center;
+    margin-top: 28px;
+
+    th {
+        width: 45px;
+        height: 25px;
+    }
+    .skill_icon {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    td {
+        /* background-color: rgba(255,255,255,0.03); */
+        padding: 0px;
+        min-width: 45px;
+        min-height: 45px;
+        border-top: 1px solid rgba(255,255,255, 0.2);
+        border-bottom: 1px solid rgba(255,255,255, 0.2);
+    }
+    #tr_char_class {
+        width: 100%;
+    }
+
+    .row_head {
+        /* background-color: rgba(255,255,255,0.03); */
+        /* color: lightgray; */
+        font-size: 18px;
+        color: darkgray;
+    }
+}
+
+select#char_classes {
+    background-color: var(--input-dark);
+    color: darkgray;
+    font-size: 18px;
+    text-align: center;
+    width: 150px;
+    border-radius: 8px 8px 0px 0px;
+    border-color: black;
+
+    .branch_1 {
+        color: gray;
+    }
+    .branch_2 {
+        color: lightgray;
+    }
+    .branch_3 {
+        color: rgb(219, 175, 0);
+    }
+}
+#char_classes:hover {
+    color: lightgray;
+}
+
+
+.skill_bars {
+    /* margin-right: 10px; */
+    color: darkgray;
+    border: 1px solid gray;
+    width: 500px;
+
+    ul {
+        list-style-type: none;
+        margin-right: 20px;
+    }
+
+    li {
+        height: 20px;
+        border: 1px solid gray;
+        border-collapse: collapse;
+        padding: 4px;
+    }
+
+    #li_first {
+        border: 1px solid gray;
+        border-radius: 6px 0px 0px 6px;
+        background-color: var(--header-red);
+        color: var(--text-light)
+    }
+
+    p {
+        margin: 0px;
+        border-right: 1px solid gray;
+    }
+}
