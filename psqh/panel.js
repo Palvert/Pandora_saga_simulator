@@ -84,7 +84,7 @@ function initCompletionTracking() {
       e.stopPropagation();
       
       const button = e.target;
-      const questName = button.getAttribute('data-quest');
+      const questName = button.getAttribute('quest-id');
       const row = button.closest('tr');
       const isCompleted = button.classList.toggle('completed');
       
@@ -183,7 +183,7 @@ function loadFilters() {
     // Handle completed quests - reset D-type if different day
     currentFilters.completedQuests = (savedState.completedQuests || []).filter(quest => {
       const row = [...tbody.querySelectorAll('tr')].find(r => {
-        return r.querySelector('.complete-btn')?.getAttribute('data-quest') === quest;
+        return r.querySelector('.complete-btn')?.getAttribute('quest-id') === quest;
       });
       const questType = row?.querySelector('td:nth-child(7)')?.textContent.trim();
       
@@ -208,7 +208,7 @@ function refreshCompletionStates() {
     const button = row.querySelector('.complete-btn');
     if (!button) return;
     
-    const questName = button.getAttribute('data-quest');
+    const questName = button.getAttribute('quest-id');
     const questType = row.querySelector('td:nth-child(7)').textContent.trim();
     const isCompleted = currentFilters.completedQuests.includes(questName);
     
