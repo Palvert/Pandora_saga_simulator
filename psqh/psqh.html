@@ -21,6 +21,7 @@
         <label><input type="radio" name="questType" value="M"> Main (M)</label>
         <label><input type="radio" name="questType" value="S"> Side (S)</label>
         <label><input type="radio" name="questType" value="D"> Daily (D)</label>
+        <label><input type="radio" name="questType" value="X"> Special ()</label>
       </div>
     </div>
 
@@ -330,18 +331,195 @@
 
           <!-- Below are main (story) quests -->
 
-          <!-- <tr>
-            <td></td>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Supplier Roone's Request">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Supplier Roone's Request</td>
+            <td>1</td>
+            <td>55</td>
+            <td>60</td>
+            <td>350</td>
+            <td>M</td>
           </tr>
           <tr>
-            <td></td>
+            <td id="qmark"><button class="complete-btn" data-quest="(start NPC) is Calling for You">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">(start NPC) is Calling for You</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>0</td>
+            <td>M</td>
           </tr>
           <tr>
-            <td></td>
+            <td id="qmark"><button class="complete-btn" data-quest="Practice and Training">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Practice and Training</td>
+            <td>1</td>
+            <td>55</td>
+            <td>350</td>
+            <td>250</td>
+            <td>M</td>
           </tr>
           <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Supplier Koome’s Request">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Supplier Koome’s Request</td>
+            <td>1</td>
+            <td>55</td>
+            <td>300</td>
+            <td>500</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Go Meet Lias">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Go Meet Lias</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>1000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Ronia's Request">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Ronia's Request</td>
+            <td>1</td>
+            <td>55</td>
+            <td>300</td>
+            <td>1800</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Bureaucracy">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Bureaucracy</td>
+            <td>1</td>
+            <td>55</td>
+            <td>800</td>
+            <td>6500</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="The Kingdom's Little Secret">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">The Kingdom's Little Secret</td>
+            <td>1</td>
+            <td>55</td>
+            <td>500</td>
+            <td>5000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Help Gharb the Weaponsmith">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Help Gharb the Weaponsmith</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>8000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Investigation">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Investigation</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>10000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Robbery Request">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Robbery Request</td>
+            <td>1</td>
+            <td>55</td>
+            <td>500</td>
+            <td>12000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Who's the Traitor">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Who's the Traitor</td>
+            <td>1</td>
+            <td>55</td>
+            <td>800</td>
+            <td>16000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Deserter">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Deserter</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>18000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="City in Peril">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">City in Peril</td>
+            <td>1</td>
+            <td>55</td>
+            <td>1200</td>
+            <td>22000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Paving the Way for Peace">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Paving the Way for Peace</td>
+            <td>1</td>
+            <td>55</td>
+            <td>1000</td>
+            <td>24000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="The Mysterious Bracelet">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">The Mysterious Bracelet</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>28000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="A Brewing Storm">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">A Brewing Storm</td>
+            <td>1</td>
+            <td>55</td>
+            <td>1500</td>
+            <td>32000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Paving the Way for Peace II">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Paving the Way for Peace II</td>
+            <td>1</td>
+            <td>55</td>
+            <td>2000</td>
+            <td>38000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="The Deserter II">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">The Deserter II</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>40000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Duel">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Duel</td>
+            <td>1</td>
+            <td>55</td>
             <td></td>
-          </tr> -->
+            <td>1000000</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td id="qmark"><button class="complete-btn" data-quest="Calamity">✓</button></td>
+            <td id="qname" onclick="open_descr(this)">Calamity</td>
+            <td>1</td>
+            <td>55</td>
+            <td>0</td>
+            <td>0</td>
+            <td>M</td>
+          </tr>
           
         </tbody>
       </table>
