@@ -10,10 +10,8 @@
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: black;
     font-family: "verdana";
-    display:flex;
-    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5 {
@@ -30,11 +28,16 @@ h1, h2, h3, h4, h5 {
 
 
 .skill_tree {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 2px solid dimgray;
+    border-right: 4px double dimgray;
+    border-top: 6px ridge dimgray;
+    border-bottom: 4px double dimgray;
     border-collapse: collapse;
     width: 1%;
     text-align: center;
     margin-top: 28px;
+    height: 1%;
+    background-color: var(--bg-dark);
 
     th {
         width: 45px;
@@ -53,9 +56,6 @@ h1, h2, h3, h4, h5 {
         min-height: 45px;
         border-top: 1px solid rgba(255,255,255, 0.2);
         border-bottom: 1px solid rgba(255,255,255, 0.2);
-    }
-    #tr_char_class {
-        width: 100%;
     }
 
     .row_head {
@@ -91,9 +91,12 @@ select#char_classes {
 
 
 .skill_bars {
-    /* margin-right: 10px; */
+    border: 4px double dimgray;
+    border-top: 6px ridge dimgray;
+    border-bottom: 4px double dimgray;
+    border-right: 0px;
+    background-color: var(--bg-dark);
     color: darkgray;
-    border: 1px solid gray;
     width: 500px;
 
     ul {
@@ -105,18 +108,40 @@ select#char_classes {
         height: 20px;
         border: 1px solid gray;
         border-collapse: collapse;
-        padding: 4px;
     }
 
     #li_first {
         border: 1px solid gray;
         border-radius: 6px 0px 0px 6px;
         background-color: var(--header-red);
-        color: var(--text-light)
+        color: var(--text-light);
+        margin-left: 0px;
     }
 
     p {
         margin: 0px;
-        border-right: 1px solid gray;
+    }
+    
+    .sbar {
+        display: flex;
+        gap: 6px;
+
+        .sname {
+            border-right: 2px solid gray;
+            width: 60px;
+            height: 100%;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    }
+
+    .smeasure {
+        border-left: 2px solid darkred;
+
+        .color_rect {
+            background-color: green;
+            width: 250px;
+            height: 20px;
+        }
     }
 }
