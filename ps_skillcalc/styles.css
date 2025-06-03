@@ -124,7 +124,7 @@ select#char_classes {
     
     .sbar {
         display: flex;
-        gap: 6px;
+        /* gap: 6px; */
 
         .sname {
             border-right: 2px solid gray;
@@ -136,12 +136,39 @@ select#char_classes {
     }
 
     .smeasure {
-        border-left: 2px solid darkred;
+        border-left: 3px solid darkred;
+        border-right: 3px solid darkblue;
+        width: 250px;
 
         .color_rect {
             background-color: green;
             width: 250px;
             height: 20px;
         }
+    }
+
+    .arrow_left {
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-right: 14px solid lime;
+        border-bottom: 8px solid transparent;
+        margin: 2px 4px 0px 8px;
+
+    }
+
+    .arrow_right {
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-left: 14px solid lime;
+        border-bottom: 8px solid transparent;
+        margin: 2px 8px 0px 4px;
+
+    }
+
+    .arrow_left:hover, .arrow_right:hover {
+        border-right-color: green;
+        border-left-color: green;
     }
 }
