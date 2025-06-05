@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <header style="width:100%; display:flex; flex-direction:row; align-items: center; justify-content: center; margin-bottom:20px;">
+    <section>
+      <div onclick="window.location.href='../index.html';">
+        <img src="../PSlogo.png" height="100px" style="cursor:pointer;" alt="pandora_saga_logo"">
+      </div>
+    </section>
+    <h2 style="margin-left: 40px;">Miscellaneous</h2>
+  </header>
+
+  <div class="layout">
+    <div class="frame">
+      <h4 style="text-align:center; margin: 0px 0px 10px 0px;">Real time before night</h4>
+      <p style="margin-bottom:10px;">Type in the currient game time:</p>
+      <div style="display:flex; transform: translate(34.0%, -30%); margin-top: 14px;">
+        <input id="inp_time" type="time" style="text-align:center; font-size: 22px;">
+      </div>
+      <label id="lbl_tleft" style="text-align:center; font-size:22px;">--:--</label>
+      <div style="display:flex; width: 50%; transform: translate(50%, 0%); margin-top: 10px;">
+        <button id="btn_calc_timeleft">Calc</button>
+      </div>
+    </div> 
+  </div>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

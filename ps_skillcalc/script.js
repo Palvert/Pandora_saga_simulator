@@ -4,12 +4,16 @@ function getbyid(object) {
 
 
 function resize_sbar(direction) {
+    console.log("pressed!");
     let sbar = getbyid("sbar_slash");
+    
     initial_width = 250;
     if (direction) {
-        sbar.style.width += initial_width / 100 * 1;
+        console.log("-decr");
+        sbar.style.width = `${sbar.style.width - 1}%`;
     } else {
-        sbar.style.width -= initial_width / 100 * 1;
+        console.log("+add");
+        sbar.style.width = `${Math.max(parseFloat(sbar.style.width)/90, 0)}%`;
     }
 }
 
