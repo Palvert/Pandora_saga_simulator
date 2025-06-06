@@ -20,6 +20,6 @@ getbyid("btn_calc_timeleft").addEventListener("click", () => {
     let game_time_in_real_time = game_mins_before_night * ONE_GAME_MIN_TO_REAL_MIN;
     let real_hrs = Math.floor(game_time_in_real_time / 60);
     let real_min = game_time_in_real_time % 60;
-    getbyid("lbl_tleft").textContent = `${real_hrs}:${Math.floor(real_min)}`;
+    getbyid("lbl_tleft").textContent = `${real_hrs} h., ${Math.floor(real_min)} min.`;
     console.log(real_hrs, real_min);
 });

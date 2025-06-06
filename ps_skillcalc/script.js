@@ -3,6 +3,7 @@ function getbyid(object) {
 }
 
 
+
 function resize_sbar(direction) {
     console.log("pressed!");
     let sbar = getbyid("sbar_slash");
