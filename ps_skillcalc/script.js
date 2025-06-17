@@ -4,17 +4,22 @@ function getbyid(object) {
 
 
 
-function resize_sbar(direction) {
-    console.log("pressed!");
+function resize_sbar(direction, points_to_chng) {
     let sbar = getbyid("sbar_slash");
-    
-    initial_width = 250;
-    if (direction) {
-        console.log("-decr");
-        sbar.style.width = `${sbar.style.width - 1}%`;
-    } else {
-        console.log("+add");
-        sbar.style.width = `${Math.max(parseFloat(sbar.style.width)/90, 0)}%`;
+    let sbar_width = parseFloat(sbar.style.width);
+
+    let initial_width = 250;
+    let one_point_width = initial_width / 90;
+
+    switch (points_to_chng) {
+        // increase
+        case("one" && direction): sbar.style.width = `${Math.min(sbar_width + (one_point_width * 1), 250)}px`; break;
+        case("ten" && direction): sbar.style.width = `${Math.min(sbar_width + (one_point_width * 10), 250)}px`; break;
+        case("all" && direction): sbar.style.width = `${initial_width}px`; break;
+        // decrease
+        case("one"): sbar.style.width = `${Math.max(sbar_width + (one_point_width * 1), 0)}px`; break;
+        case("ten"): sbar.style.width = `${Math.max(sbar_width + (one_point_width * 10), 0)}px`; break;
+        case("all"): sbar.style.width = `${0}px`; break;
     }
 }
 

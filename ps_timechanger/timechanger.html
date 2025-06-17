@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Time Changer Script</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body style="background-color:#121212; color:#e0e0e0; font-family: Consolas; margin-left: 100px">
+    <header style="width:100%; display:flex; flex-direction:row; align-items: center; justify-content: center; margin-bottom:20px;">
+        <section>
+        <div onclick="window.location.href='../index.html';">
+            <img src="../PSlogo.png" height="100px" style="cursor:pointer;" alt="pandora_saga_logo"">
+        </div>
+        </section>
+        <h2 style="margin-left: 40px;">Time Changer Script</h2>
+    </header>
+    <h3>
+    This script serves as a work around for the wrong ingame time issue.    </br>
+    Ingame time depends on the system time, so if you don't live in    </br>
+    the same time zone as the server, you have to manually change time on your computer.    </br>
+    I'm too lazy to change back and forth the system time each time I run the game    </br>
+    so I made this script, that runs the launcher, temporarily changes time to the right time zone    </br>
+    for enough time for you to log in and launch the game, and after some time automatically    </br>
+    changes the system time back to your local time.    </br>
+    </h3>
+    <h3> Create (any name).bat file, open and paste this: </h3>
+    <p>
+@ECHO off    </br>
+    </br>
+:: 1. Change LAUNCHER_PATH if needed (path should lead to shortcut, not an .exe! to keep your game settings.)    </br>
+:: 2. Change TIME_LOCAL, you can find the name of your time zone by command "tzutil /g"    </br>
+:: 3. Change REVERT_DELAY if needed (the time you need to run the game from launcher)    </br>
+</br>
+SET LAUNCHER_PATH=C:\Users\Public\Desktop\PandoraSaga.lnk    </br>
+SET TIME_MSK="Russian Standard Time"    </br>
+SET TIME_LOCAL="SE Asia Standard Time"    </br>
+SET REVERT_DELAY=60    </br>
+    </br>
+::check if the launcher is already running, produces ERRORLEVEL    </br>
+tasklist /fi "ImageName eq Launcher.bin" /fo csv 2>NUL | find /I "Launcher.bin">NUL    </br>
+    </br>
+::assign currient time to the variable    </br>
+FOR /F "tokens=* USEBACKQ" %%F IN (`tzutil /g`) DO (    </br>
+	SET cur_time=%%F    </br>
+)    </br>
+</br>
+::run the launcher if it's not running    </br>
+IF %ERRORLEVEL%==1 (    </br>
+	tzutil /s %TIME_MSK%    </br>
+	start %LAUNCHER_PATH%    </br>
+	ECHO Time changed to MSK. Running the launcher...    </br>
+	    </br>
+	::revert time after the delay (sec.)    </br>
+	ECHO --------------------------------------------    </br>
+	ECHO Time will be reverted in:    </br>
+	timeout /t %REVERT_DELAY%    </br>
+	tzutil /s %TIME_LOCAL%    </br>
+	ECHO Local time is reverted.    </br>
+    </br>
+) ELSE (    </br>
+	ECHO Launcher is already running!    </br>
+)    </br>
+    </p>
+    
+</body>
+</html>
