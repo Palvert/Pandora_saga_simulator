@@ -104,18 +104,23 @@ select#char_classes {
         margin-right: 20px;
     }
 
-    li {
-        height: 20px;
-        border: 1px solid gray;
-        border-collapse: collapse;
-    }
 
-    #li_first {
+    .skill_branch_title {
         border: 1px solid gray;
         border-radius: 6px 0px 0px 6px;
-        background-color: var(--header-red);
+        background-color: var(--border-dark);
         color: var(--text-light);
-        margin-left: 0px;
+        margin: 15px 20px 0px 10px;
+        padding-left: 10px;
+    }
+
+    .skill_line {
+        margin-top: 0;
+        li {
+            height: 20px;
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
     }
 
     p {
@@ -136,75 +141,53 @@ select#char_classes {
     }
 
     .smeasure {
-        border-left: 3px solid darkred;
-        border-right: 3px solid darkblue;
-        width: 250px;
+        border-left: 4px solid darkred;
+        border-right: 4px solid darkblue;
+        width: 200px;
+        margin-right: 3px;
 
         .color_rect {
+            margin: 2px 4px 4px 0px;
             background-color: green;
-            /* width: 250px; */
-            height: 20px;
+            border-top: 2px solid #00bb00;
+            border-bottom: 2px solid #005500;
+            height: 12px;
         }
     }
 
-    .arrow_left_one {
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-right: 8px solid white;
-        border-bottom: 8px solid transparent;
-        margin: 2px 4px 0px 4px;
-
-    }
-    .arrow_left_ten {
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-right: 8px solid lime;
-        border-bottom: 8px solid transparent;
-        margin: 2px 0px 0px 4px;
-
-    }
-    .arrow_left_all {
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-right: 8px solid blue;
-        border-bottom: 8px solid transparent;
-        margin: 2px 0px 0px 8px;
-
+    .btn_skill_decr {
+        padding: 0;
+        width: 22px;
+        height: 16px;
+        border: 1px groove lightgray;
+        background-color: #700000;
+        margin: 2px 2px 0px 2px;
+        font-family: 'Consols';
+        font-weight: bold;
+        font-size: 14px;
+        color: red;
     }
 
-    .arrow_right_one {
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-left: 8px solid white;
-        border-bottom: 8px solid transparent;
-        margin: 2px 4px 0px 4px;
-
-    }
-    .arrow_right_ten {
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-left: 8px solid lime;
-        border-bottom: 8px solid transparent;
-        margin: 2px 4px 0px 0px;
-
-    }
-    .arrow_right_all {
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-left: 8px solid blue;
-        border-bottom: 8px solid transparent;
-        margin: 2px 8px 0px 0px;
-
+    .btn_skill_incr{
+        padding: 0;
+        width: 22px;
+        height: 16px;
+        border: 1px solid lightgray;
+        background-color: green;
+        margin: 2px 2px 0px 2px;
+        font-family: 'Consolas';
+        font-weight: bold;
+        font-size: 12px;
+        color: lime;
     }
 
-    .arrow_left:hover, .arrow_right:hover {
-        border-right-color: green;
-        border-left-color: green;
+    .btn_skill_decr:hover {
+        border-right-color: darkred;
+        border-left-color: darkred;
+    }
+
+    .btn_skill_incr:hover {
+        border-right-color: darkgreen;
+        border-left-color: darkgreen;
     }
 }
