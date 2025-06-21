@@ -67,7 +67,6 @@ tr.completed {
 
 tr.completed td {
   color: #aaa;
-  text-decoration: line-through;
 }
 
 .daily-reset {

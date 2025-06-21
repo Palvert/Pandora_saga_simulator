@@ -4,8 +4,8 @@ function getbyid(object) {
 
 
 
-function resize_sbar(direction, points_to_chng) {
-    let sbar = getbyid("sbar_slash");
+function resize_sbar(sbar_name, direction, points_to_chng) {
+    let sbar = getbyid(sbar_name);
     let sbar_width = parseFloat(sbar.style.width);
 
     let initial_width = 0;
