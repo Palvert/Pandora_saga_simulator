@@ -9,6 +9,7 @@
   --input-dark: #252525;
   --header-red: #550505;
   --need_list_bg_h: #484848;
+  --page-title: rgba(145, 140, 120, 0.5);
 }
 
 /* ===== Base Styles ===== */
@@ -21,6 +22,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  #page_title {
+    color: var(--page-title);
+  }
 }
 
 .container {

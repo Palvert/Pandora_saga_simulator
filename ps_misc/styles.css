@@ -7,11 +7,18 @@
     --hover-dark: #2a2a2a;
     --input-dark: #252525;
     --header-red: #550505;
+    --page-title: rgba(145, 140, 120, 0.5);
+    --notabs_black: #121212;
 }
 
 body {
-    background-color: black;
-    font-family: "verdana";
+    background-color: var(--bg-dark);
+    font-family: "Consolas";
+    font-size: 18px;
+
+    #page_title {
+        color: var(--page-title);
+    }
 }
 
 h1, h2, h3, h4, h5 {
@@ -56,7 +63,7 @@ input {
     border: 2px solid dimgray;
     border-top: 6px ridge dimgray;
     border-bottom: 4px double dimgray;
-    background-color: var(--bg-dark);
+    background-color: var(--notabs_black);
     color: darkgray;
     /* width: 100%; */
     padding: 10px;

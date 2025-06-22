@@ -7,6 +7,8 @@
     --hover-dark: #2a2a2a;
     --input-dark: #252525;
     --header-red: #550505;
+    --page-title: rgba(145, 140, 120, 0.5);
+    --notabs_black: #121212;
 }
 
 body {
@@ -17,6 +19,10 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     min-height: 100vh;
+
+    #page_title {
+        color: var(--page-title);
+    }
 }
 
 button {
@@ -59,6 +65,7 @@ input {
     border-radius: 6px;
     /* min-width: 200px; */
     max-width: 414px;
+    background-color: var(--notabs_black);
 }
 
 /* table {
