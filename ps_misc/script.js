@@ -32,23 +32,19 @@ getbyid("calc1_btn_timeleft").addEventListener("click", () => {
 
 
 getbyid("calc2_btn_timeleft").addEventListener("click", () => {
-    const TIME = getbyid("calc2_gtime").value;
+    const TIME = getbyid("calc2_curtime").value;
     const [cur_hours, cur_minutes] = TIME.split(":").map(Number);
     let cur_game_time_in_minutes = (cur_hours * 60) + cur_minutes;
 
-    const need_game_time_in_minutes = getbyid("calc2_curtime").value;
+    const need_game_time_in_minutes = getbyid("calc2_gtime").value;
     const [need_hours, need_minutes] = need_game_time_in_minutes.split(":").map(Number);
     let NIGHT_RESP_TIME_IN_GAME_MINS = (need_hours * 60) + need_minutes;
 
     let game_mins_left;
     if (NIGHT_RESP_TIME_IN_GAME_MINS >= cur_game_time_in_minutes) {
         game_mins_left = NIGHT_RESP_TIME_IN_GAME_MINS - cur_game_time_in_minutes;
-        console.log("kek1");
-        console.log(NIGHT_RESP_TIME_IN_GAME_MINS);
-        console.log(cur_game_time_in_minutes);
     } else { // input time is past 7pm
         game_mins_left = (NIGHT_RESP_TIME_IN_GAME_MINS + (24 * 60 - cur_game_time_in_minutes));
-        console.log("kek2");
     }
 
     const ONE_GAME_MIN_TO_REAL_MIN = 0.125;
@@ -56,10 +52,6 @@ getbyid("calc2_btn_timeleft").addEventListener("click", () => {
     let real_hrs = Math.floor(game_time_in_real_time / 60);
     let real_min = Math.floor(game_time_in_real_time % 60);
     let real_sec = Math.floor(60 * ((game_time_in_real_time % 60) - real_min));
-
-    console.log(real_hrs);
-    console.log(real_min);
-    console.log(real_sec);
 
     // add zeros to the single digits
     let str_hrs = (real_hrs < 10) ? ('0' + real_hrs.toString()) : real_hrs.toString();
