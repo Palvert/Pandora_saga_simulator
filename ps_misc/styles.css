@@ -53,16 +53,16 @@ input {
 }
 
 .frame {
-    border: 4px double dimgray;
+    border: 2px solid dimgray;
     border-top: 6px ridge dimgray;
     border-bottom: 4px double dimgray;
-    border-right: 4px solid double;
     background-color: var(--bg-dark);
     color: darkgray;
     /* width: 100%; */
     padding: 10px;
     display: flex;
     flex-direction: column;
+    margin: 10px;
 
     ul {
         list-style-type: none;
@@ -135,5 +135,39 @@ input {
     .arrow_left:hover, .arrow_right:hover {
         border-right-color: green;
         border-left-color: green;
+    }
+}
+
+.calc_title {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+
+    #title_icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    h4 {
+        padding-top: 10px;
+    }
+}
+
+#calc2 {
+    .input_time {
+        display:flex; 
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            align-items: end;
+        }
+
+        p {
+            margin-top: 12px;
+        }
     }
 }

@@ -12,7 +12,7 @@ SET REVERT_DELAY=60
 ::check if the launcher is already running, produces ERRORLEVEL
 tasklist /fi "ImageName eq Launcher.bin" /fo csv 2>NUL | find /I "Launcher.bin">NUL
 
-::assign currient time to the variable
+::assign current time to the variable
 FOR /F "tokens=* USEBACKQ" %%F IN (`tzutil /g`) DO (
 	SET cur_time=%%F
 )

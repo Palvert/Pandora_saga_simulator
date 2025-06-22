@@ -18,18 +18,45 @@
   </header>
 
   <div class="layout">
+    <!-- REAL TIME BEFORE NIGHT CALC -->
     <div class="frame">
-      <h4 style="text-align:center; margin: 0px 0px 10px 0px;">Real time before night</h4>
-      <p style="margin-bottom:10px;">Type in the currient game time:</p>
-      <div style="display:flex; transform: translate(34.0%, -30%); margin-top: 14px;">
-        <input id="inp_time" type="time" style="text-align:center; font-size: 22px;">
+      <div class="calc_title">
+        <img id="title_icon" src="images/icon_night.png" alt="icon_night.png">
+        <h4 style="text-align:center; margin: 0px 0px 10px 0px;">Real time before night</h4>
       </div>
-      <label id="lbl_tleft" style="text-align:center; font-size:22px;">--:--</label>
+      <p style="margin-bottom:10px;">Type in the current game time:</p>
+      <div style="display:flex; transform: translate(34.0%, -30%); margin-top: 14px;">
+        <input id="calc1_inp_time" type="time" style="text-align:center; font-size: 22px;">
+      </div>
+      <label id="calc1_lbl_tleft" style="text-align:center; font-size:22px;">--:--</label>
       <div style="display:flex; width: 50%; transform: translate(50%, 0%); margin-top: 10px;">
-        <button id="btn_calc_timeleft">Calc</button>
+        <button id="calc1_btn_timeleft">Calc</button>
       </div>
     </div> 
-  </div>
+
+    <!-- REAL TIME BEFORE GAME TIME -->
+    <!-- <div class="frame" id="calc2">
+      <div class="calc_title">
+        <img id="title_icon" src="images/icon_day.png" alt="icon_day.png">
+        <h4 style="text-align:center; margin: 0px 0px 10px 0px;">Real time before game time</h4>
+      </div>
+
+
+      <div class="input_time">
+        <p style="margin-bottom:10px;">Current game time:</p>
+        <input id="calc2_curtime" type="time" style="text-align:center; font-size: 22px;">
+      </div>
+      <div class="input_time">
+        <p style="margin-bottom:10px;">Game time you need:</p>
+        <input id="calc2_gtime" type="time" style="text-align:center; font-size: 22px;">
+      </div>
+
+      <label id="calc2_lbl_tleft" style="text-align:center; font-size:22px;">--:--</label>
+      <div style="display:flex; width: 50%; transform: translate(50%, 0%); margin-top: 10px;">
+        <button id="calc2_btn_timeleft">Calc</button>
+      </div>
+    </div> 
+  </div> -->
 
 </body>
 <script type="text/javascript" src="script.js"></script>
