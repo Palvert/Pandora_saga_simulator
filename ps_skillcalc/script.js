@@ -2,15 +2,54 @@ function getbyid(object) {
     return document.getElementById(object) || `Unable to return ${object}`;
 }
 
+const SBAR_MAX_WIDTH  = 200;
+const SBAR_INIT_WIDTH = 0;
 
+function _get_select_class() {
+    return getbyid("char_classes").value;
+}
+
+function select_class() {
+    switch (_get_select_clalss()) {
+        case("warrior"): break;
+        case("gladiator"): break;
+        case("juggernaut"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+        case("warrior"): break;
+    }
+}
 
 function resize_sbar(sbar_name, direction, points_to_chng) {
     let sbar = getbyid(sbar_name);
     let sbar_width = parseFloat(sbar.style.width);
 
-    let initial_width = 0;
-    let max_width     = 200;
-    let one_point_width = max_width / 90;
+    let one_point_width = SBAR_MAX_WIDTH / 90;
 
     // increase
     if(points_to_chng == "one" && direction) {
@@ -20,7 +59,7 @@ function resize_sbar(sbar_name, direction, points_to_chng) {
         sbar.style.width = `${Math.min(sbar_width + (one_point_width * 10), 250)}px`; 
     }
     if(points_to_chng == "all" && direction) {
-        sbar.style.width = `${max_width}px`;
+        sbar.style.width = `${SBAR_MAX_WIDTH}px`;
     }
 
     // decrease
@@ -35,8 +74,8 @@ function resize_sbar(sbar_name, direction, points_to_chng) {
     }
 
     // limit the bar width
-    if (parseFloat(sbar.style.width) > max_width) {
-        sbar.style.width = `${max_width}px`;
+    if (parseFloat(sbar.style.width) > SBAR_MAX_WIDTH) {
+        sbar.style.width = `${SBAR_MAX_WIDTH}px`;
     }
 
     if (parseFloat(sbar.style.width) < 0) {

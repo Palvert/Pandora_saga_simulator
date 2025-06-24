@@ -7,11 +7,17 @@
     --hover-dark: #2a2a2a;
     --input-dark: #252525;
     --header-red: #550505;
+    --page-title: rgba(145, 140, 120, 0.5);
+    --notabs_black: #121212;
 }
 
 body {
     background-color: var(--bg-dark);
     font-family: "verdana";
+
+    #page_title {
+       color: var(--page-title); 
+    }
 }
 
 h1, h2, h3, h4, h5 {
@@ -37,7 +43,7 @@ h1, h2, h3, h4, h5 {
     text-align: center;
     margin-top: 28px;
     height: 1%;
-    background-color: var(--bg-dark);
+    background-color: var(--notabs_black);
 
     th {
         width: 45px;
@@ -100,7 +106,7 @@ select#char_classes {
     border-bottom: 4px double dimgray;
     border-right: 2px solid dimgray;
     border-left: 2px solid dimgray;
-    background-color: var(--bg-dark);
+    background-color: var(--notabs_black);
     color: darkgray;
     width: 590px;
 
@@ -164,7 +170,6 @@ select#char_classes {
 
     .smeasure {
         /* border-left: 4px solid darkred; */
-        border-right: 4px solid darkblue;
         width: 200px;
         height: 20px;
         margin-right: 3px;
@@ -176,6 +181,11 @@ select#char_classes {
             border-bottom: 2px solid #005500;
             height: 12px;
         }
+    }
+
+    .sbar_limit {
+        width: 100px;
+        border-right: 3px ridge darkblue;
     }
 
     .skill_num {
@@ -211,12 +221,12 @@ select#char_classes {
     }
 
     .btn_skill_decr:hover {
-        border-right-color: darkred;
-        border-left-color: darkred;
+        background-color: rgb(80, 0, 0);
+        background-color: rgb(80, 0, 0);
     }
 
     .btn_skill_incr:hover {
-        border-right-color: darkgreen;
-        border-left-color: darkgreen;
+        background-color: rgb(0, 90, 0);
+        background-color: rgb(0, 90, 0);
     }
 }

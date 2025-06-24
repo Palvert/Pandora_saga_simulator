@@ -13,43 +13,43 @@
         <img src="../PSlogo.png" height="100px" style="cursor:pointer;" alt="pandora_saga_logo"">
       </div>
     </section>
-    <h2 style="margin-left: 40px;">Skill Calculator</h2>
+    <h2 id="page_title" style="margin-left: 40px;">Skill Calculator</h2>
   </header>
   <div class="tlayout">
     <div class="skill_calc">
       <select name="char_classes" id="char_classes">
         <!-- Warrior tree -->
-        <option class="branch_1" value="0">Warrior</option>
-        <option class="branch_2" value="0">Gladiator</option>
-        <option class="branch_3" value="0">Juggernaut</option>
-        <option class="branch_3" value="0">Dragoon</option>
-        <option class="branch_2" value="0">Knight</option>
-        <option class="branch_3" value="0">General</option>
-        <option class="branch_3" value="0">Paladin</option>
+        <option class="branch_1" value="warrior">Warrior</option>
+        <option class="branch_2" value="gladiator">Gladiator</option>
+        <option class="branch_3" value="juggernaut">Juggernaut</option>
+        <option class="branch_3" value="dragoon">Dragoon</option>
+        <option class="branch_2" value="knight">Knight</option>
+        <option class="branch_3" value="general">General</option>
+        <option class="branch_3" value="paladin">Paladin</option>
         <!-- Scout tree -->
-        <option class="branch_1" value="0">Scout</option>
-        <option class="branch_2" value="0">Archer</option>
-        <option class="branch_3" value="0">Sniper</option>
-        <option class="branch_3" value="0">Hunter</option>
-        <option class="branch_2" value="0">Agent</option>
-        <option class="branch_3" value="0">Assassin</option>
-        <option class="branch_3" value="0">Saboteur</option>
+        <option class="branch_1" value="scout">Scout</option>
+        <option class="branch_2" value="archer">Archer</option>
+        <option class="branch_3" value="sniper">Sniper</option>
+        <option class="branch_3" value="hunter">Hunter</option>
+        <option class="branch_2" value="agent">Agent</option>
+        <option class="branch_3" value="assassin">Assassin</option>
+        <option class="branch_3" value="saboteur">Saboteur</option>
         <!-- Acolyte tree -->
-        <option class="branch_1" value="0">Acolyte</option>
-        <option class="branch_2" value="0">Priest</option>
-        <option class="branch_3" value="0">Cleric</option>
-        <option class="branch_3" value="0">Enchanter</option>
-        <option class="branch_2" value="0">Ascetic</option>
-        <option class="branch_3" value="0">Monk</option>
-        <option class="branch_3" value="0">Exorcist</option>
+        <option class="branch_1" value="acolyte">Acolyte</option>
+        <option class="branch_2" value="priest">Priest</option>
+        <option class="branch_3" value="cleric">Cleric</option>
+        <option class="branch_3" value="enchanter">Enchanter</option>
+        <option class="branch_2" value="ascetic">Ascetic</option>
+        <option class="branch_3" value="monk">Monk</option>
+        <option class="branch_3" value="exorcist">Exorcist</option>
         <!-- Mage tree -->
-        <option class="branch_1" value="0">Mage</option>
-        <option class="branch_2" value="0">Wizard</option>
-        <option class="branch_3" value="0">Warlock</option>
-        <option class="branch_3" value="0">Conjurer</option>
-        <option class="branch_2" value="0">Sorcerer</option>
-        <option class="branch_3" value="0">Corruptor</option>
-        <option class="branch_3" value="0">Shadowblade</option>
+        <option class="branch_1" value="mage">Mage</option>
+        <option class="branch_2" value="wizard">Wizard</option>
+        <option class="branch_3" value="warlock">Warlock</option>
+        <option class="branch_3" value="conjurer">Conjurer</option>
+        <option class="branch_2" value="sorcerer">Sorcerer</option>
+        <option class="branch_3" value="corruptor">Corruptor</option>
+        <option class="branch_3" value="shadowblade">Shadowblade</option>
       </select>
       
       <div class="skill_bars">
@@ -59,7 +59,7 @@
             <div class="sbar">
               <p>Melee</p>
               <p class="branch_num">0/100</p>
-              <p class="btn_reset_branch" onclick="resetBranch()">🔃</p>
+              <p class="btn_reset_branch" onclick="resetBranch()">✖️</p>
             </div>
           </li>
         </ul>
@@ -69,8 +69,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Slash</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_slash" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_slash_limit"><div class="color_rect" id="sbar_slash" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_slash">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_slash', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_slash', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_slash', 0, 'one')">-</button>
@@ -82,8 +82,8 @@
           <li>
             <div class="sbar">
               <div class="sname"> <p>Thrust</p> </div>
-              <div class="smeasure"><div class="color_rect" id="sbar_thrust" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_thrust_limit"><div class="color_rect" id="sbar_thrust" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_thrust">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_thrust', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_thrust', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_thrust', 0, 'one')">-</button>
@@ -95,8 +95,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Cleave</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_cleave" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_cleave_limit"><div class="color_rect" id="sbar_cleave" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_cleave">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_cleave', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_cleave', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_cleave', 0, 'one')">-</button>
@@ -108,8 +108,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Bash</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_bash" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_bash_limit"><div class="color_rect" id="sbar_bash" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_bash">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_bash', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_bash', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_bash', 0, 'one')">-</button>
@@ -121,8 +121,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Defend</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_defend" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_defend_limit"><div class="color_rect" id="sbar_defend" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_defend">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_defend', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_defend', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_defend', 0, 'one')">-</button>
@@ -138,7 +138,7 @@
             <div class="sbar">
               <p>Finesse</p>
               <p class="branch_num">0/100</p>
-              <p class="btn_reset_branch" onclick="resetBranch()">🔃</p>
+              <p class="btn_reset_branch" onclick="resetBranch()">✖️</p>
             </div>
           </li>
         </ul>
@@ -148,8 +148,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Ranged</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_ranged" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_ranged_limit"><div class="color_rect" id="sbar_ranged" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_ranged">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_ranged', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_ranged', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_ranged', 0, 'one')">-</button>
@@ -161,8 +161,8 @@
           <li>
             <div class="sbar">
               <div class="sname"> <p>Alchemy</p> </div>
-              <div class="smeasure"><div class="color_rect" id="sbar_alchemy" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_alchemy_limit"><div class="color_rect" id="sbar_alchemy" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_alchemy">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_alchemy', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_alchemy', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_alchemy', 0, 'one')">-</button>
@@ -174,8 +174,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Dispatch</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_dispatch" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_dispatch_limit"><div class="color_rect" id="sbar_dispatch" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_dispatch">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_dispatch', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_dispatch', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_dispatch', 0, 'one')">-</button>
@@ -187,8 +187,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Trapping</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_trapping" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_trapping_limit"><div class="color_rect" id="sbar_trapping" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_trapping">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_trapping', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_trapping', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_trapping', 0, 'one')">-</button>
@@ -200,8 +200,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Evasion</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_evasion" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_evasion_limit"><div class="color_rect" id="sbar_evasion" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_evasion">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_evasion', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_evasion', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_evasion', 0, 'one')">-</button>
@@ -217,7 +217,7 @@
             <div class="sbar">
               <p>Prayers</p>
               <p class="branch_num">0/100</p>
-              <p class="btn_reset_branch" onclick="resetBranch()">🔃</p>
+              <p class="btn_reset_branch" onclick="resetBranch()">✖️</p>
             </div>
           </li>
         </ul>
@@ -227,8 +227,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Grace</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_grace" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_grace_limit"><div class="color_rect" id="sbar_grace" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_grace">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_grace', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_grace', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_grace', 0, 'one')">-</button>
@@ -240,8 +240,8 @@
           <li>
             <div class="sbar">
               <div class="sname"> <p>Blessing</p> </div>
-              <div class="smeasure"><div class="color_rect" id="sbar_blessing" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_blessing_limit"><div class="color_rect" id="sbar_blessing" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_blessing">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_blessing', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_blessing', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_blessing', 0, 'one')">-</button>
@@ -253,8 +253,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Exorcism</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_exorcism" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_exorcism_limit"><div class="color_rect" id="sbar_exorcism" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_exorcism">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_exorcism', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_exorcism', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_exorcism', 0, 'one')">-</button>
@@ -266,8 +266,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Hymn</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_hymn" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_hymn_limit"><div class="color_rect" id="sbar_hymn" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_hymn">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_hymn', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_hymn', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_hymn', 0, 'one')">-</button>
@@ -283,7 +283,7 @@
             <div class="sbar">
               <p>Magic</p>
               <p class="branch_num">0/100</p>
-              <p class="btn_reset_branch" onclick="resetBranch()">🔃</p>
+              <p class="btn_reset_branch" onclick="resetBranch()">✖️</p>
             </div>
           </li>
         </ul>
@@ -293,8 +293,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Elemental</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_elemental" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_elemental_limit"><div class="color_rect" id="sbar_elemental" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_elemental">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_elemental', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_elemental', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_elemental', 0, 'one')">-</button>
@@ -306,8 +306,8 @@
           <li>
             <div class="sbar">
               <div class="sname"> <p>Invocation</p> </div>
-              <div class="smeasure"><div class="color_rect" id="sbar_invocation" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_invocation_limit"><div class="color_rect" id="sbar_invocation" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_invocation">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_invocation', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_invocation', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_invocation', 0, 'one')">-</button>
@@ -319,8 +319,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Darkness</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_darkness" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_darkness_limit"><div class="color_rect" id="sbar_darkness" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_darkness">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_darkness', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_darkness', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_darkness', 0, 'one')">-</button>
@@ -332,8 +332,8 @@
           <li>
             <div class="sbar">
               <div class="sname"><p>Confusion</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_confusion" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_confusion_limit"><div class="color_rect" id="sbar_confusion" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_confusion">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_confusion', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_confusion', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_confusion', 0, 'one')">-</button>
@@ -349,7 +349,7 @@
             <div class="sbar">
               <p>Special</p>
               <p class="branch_num">0/100</p>
-              <p class="btn_reset_branch" onclick="resetBranch()">🔃</p>
+              <p class="btn_reset_branch" onclick="resetBranch()">✖️</p>
             </div>
           </li>
         </ul>
@@ -359,8 +359,8 @@
           <!-- <li>
             <div class="sbar">
               <div class="sname"><p>Race</p></div>
-              <div class="smeasure"><div class="color_rect" id="sbar_race" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_race_limit"><div class="color_rect" id="sbar_race" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_race">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar(0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar(0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar(0, 'one')">-</button>
@@ -372,8 +372,8 @@
           <li>
             <div class="sbar">
               <div class="sname"> <p>Mounts</p> </div>
-              <div class="smeasure"><div class="color_rect" id="sbar_mounts" style="width:0px;"></div></div>
-              <p class="skill_num">0/90</p>
+              <div class="smeasure"><div class="sbar_limit" id="sbar_mounts_limit"><div class="color_rect" id="sbar_mounts" style="width:0px;"></div></div></div>
+              <p class="skill_num" id="skill_num_mounts">0/90</p>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_mounts', 0, 'all')"><<</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_mounts', 0, 'ten')"><</button>
               <button class="btn_skill_decr" onclick="resize_sbar('sbar_mounts', 0, 'one')">-</button>
