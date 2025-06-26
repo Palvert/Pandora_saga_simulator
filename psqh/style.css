@@ -23,6 +23,9 @@
   flex-direction: column;
   align-items: center;
 
+  max-width: 100%;
+  overflow-x: hidden;
+
   #page_title {
     color: var(--page-title);
   }
