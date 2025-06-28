@@ -190,6 +190,7 @@ select#char_classes {
 
     .skill_num {
         margin: 0px 10px 0px 10px;
+        min-width: 48px;
     }
 
     .btn_skill_decr {

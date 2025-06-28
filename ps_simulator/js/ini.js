@@ -431,7 +431,7 @@ Name['Enhance'][3][1] = new Array('トリプル'     ,'Triple '    ,'三重'    
 // -------------------------------------------------------------------------------------
 Name['Title'] = new Array(Ver,'ぱんどらしみゅ','Pandora Saga Simulator','潘朵拉 模擬器');
 
-Name['Menu'] = new Array('旧シミュレータ','old version','以前的版本');
+Name['Menu'] = new Array('旧シミュレータ','original version','以前的版本');
 
 Name['Tab'] = new Array();
 Name['Tab'][0] = new Array('職業'    ,'RACE'    ,'職業'    );

@@ -17,7 +17,7 @@
   </header>
   <div class="tlayout">
     <div class="skill_calc">
-      <select name="char_classes" id="char_classes">
+      <select name="char_classes" id="char_classes" onchange="set_select_class()">
         <!-- Warrior tree -->
         <option class="branch_1" value="warrior">Warrior</option>
         <option class="branch_2" value="gladiator">Gladiator</option>
@@ -356,7 +356,7 @@
        </ul>
 
         <ul class="skill_line" style="border: white;">
-          <!-- <li>
+          <li>
             <div class="sbar">
               <div class="sname"><p>Race</p></div>
               <div class="smeasure"><div class="sbar_limit" id="sbar_race_limit"><div class="color_rect" id="sbar_race" style="width:0px;"></div></div></div>
@@ -368,7 +368,7 @@
               <button class="btn_skill_incr" onclick="resize_sbar(1, 'ten')">></button>
               <button class="btn_skill_incr" onclick="resize_sbar(1, 'all')">>></button>
             </div>
-          </li> -->
+          </li>
           <li>
             <div class="sbar">
               <div class="sname"> <p>Mounts</p> </div>
@@ -391,119 +391,22 @@
           <th id="table_title"><h3>Skill Tree</h3></th>
         </tr>
       </thead>
-      <tbody>
-        <!-- 8 -->
-        <tr>
-          <td class="row_head">8</td>
+      <tbody id="stree_tbody">
+        <!-- <tr>
+          <td class="row_head">3</td>
           <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 12 -->
-        <tr>
-          <td class="row_head">12</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 21 -->
-        <tr>
-          <td class="row_head">21</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 26 -->
-        <tr>
-          <td class="row_head">26</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 41 -->
-        <tr>
-          <td class="row_head">41</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 54 -->
-        <tr>
-          <td class="row_head">54</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 61 -->
-        <tr>
-          <td class="row_head">61</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- 71 -->
-        <tr>
-          <td class="row_head">71</td>
-          <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <!-- open by lvl -->
-         <tr id="st_bottom_row">
+        </tr> -->
+
+        <!-- bottom section, skills open by lvl -->
+         <!-- <tr id="st_bottom_row">
           <td></td>
           <td><img class="skill_icon" src="icon/active/0000.png" alt="skillicon"></td>
-         </tr>
+         </tr> -->
       </tbody>
     </table>
   </div>
 </body>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="logic.js"></script>
+<script type="text/javascript" src="data_skill_values.js"></script>
+<script type="text/javascript" src="data_skills.js"></script>
 </html>
