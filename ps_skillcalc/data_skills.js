@@ -36,7 +36,16 @@ const SKILL_LIST = {
         description: "",
         condition:   ""
     }, 
-}
+};
+
+const SKILL_LIST_GETBYLV = {
+    slash: {
+        sname:       "",
+        icon_path:   "icon/active/0000.png",
+        description: "",
+        condition:   ""
+    }, 
+};
 
 
 // ==================== Class Specific Skill Sets ====================
@@ -44,4 +53,6 @@ const warrior_skillset = [
     [0, 0, 0],
     [0, 0],
     [0, 0, 0, 0]
-]
+];
+
+const warrior_skillset_getbylv = [0, 0 ,0 ,0 ,0];

@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    alight-content: start;
+    margin-top: 30px;
 }
 
 
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5 {
     border-collapse: collapse;
     width: 1%;
     text-align: center;
-    margin-top: 28px;
+    margin-top: 34px;
     height: 1%;
     background-color: var(--notabs_black);
 
@@ -55,6 +55,12 @@ h1, h2, h3, h4, h5 {
         cursor: pointer;
     }
 
+    .skill_icon_empty {
+        width: 40px;
+        height: 40px;
+        cursor: arrow;
+    }
+
     td {
         /* background-color: rgba(255,255,255,0.03); */
         padding: 4px;
@@ -62,6 +68,8 @@ h1, h2, h3, h4, h5 {
         min-height: 45px;
         border-top: 1px solid rgba(255,255,255, 0.2);
         border-bottom: 1px solid rgba(255,255,255, 0.2);
+        font-size: 18px;
+        color: darkgray;
     }
 
     .row_head {
@@ -76,29 +84,112 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-select#char_classes {
-    background-color: var(--input-dark);
-    color: darkgray;
-    font-size: 18px;
-    text-align: center;
-    width: 150px;
-    border-radius: 8px 8px 0px 0px;
-    border-color: black;
+.top_panel {
+    display: flex;
+    height: 30px;
+    border: 4px ridge #505050;
+    border-bottom: 0px;
+    border-radius: 12px 12px 0px 0px;
+    background-color: #151515;
+    justify-content: space-between;
 
-    .branch_1 {
-        color: gray;
+    select#char_classes {
+        background-color: var(--input-dark);
+        color: darkgray;
+        font-size: 18px;
+        text-align: center;
+        width: 150px;
+        margin-right: 20px;
+
+        border: 2px solid #4c4c4c;
+        border-bottom: 0px;
+        border-radius: 8px 8px 0px 0px;
+        border-color: dimgray #4c4c4c #696969 #b2b2b2;
+        padding: 2px 8px 6px 8px;
+
+        .branch_1 {
+            color: limegreen;
+            background-color: var(--border-dark);
+        }
+        .branch_2 {
+            color: lightgray;
+        }
+        .branch_3 {
+            color: rgb(219, 175, 0);
+        }
     }
-    .branch_2 {
+    #char_classes:hover {
         color: lightgray;
+        transition: 0.2s;
     }
-    .branch_3 {
-        color: rgb(219, 175, 0);
-    }
-}
-#char_classes:hover {
-    color: lightgray;
-}
 
+    .charLv_frame {
+        display: flex;
+        color: gray;
+        align-items: center;
+        margin-right: 20px;
+        font-size: 18px;
+
+        label {
+            margin-right: 10px;
+        }
+        
+
+        #input_charLv {
+            width: 60px;
+            background-color: var(--input-dark);
+            color: darkgray;
+            font-size: 18px;
+            height: 20px;
+            text-align: center;
+
+            border: 2px solid #4c4c4c;
+            border-bottom: 0px;
+            border-radius: 8px 8px 0px 0px;
+            border-color: dimgray #4c4c4c #696969 #b2b2b2;
+            padding: 4px 8px 4px 8px;
+        }
+    }
+
+    .spoints_frame {
+        display: flex;
+        align-items: center;
+        color: gray;
+        font-size: 18px;
+
+        #skill_points {
+            background-color: var(--input-dark);
+            text-align: center;
+            width: 77px;
+            color: darkgray;
+
+            border: 2px solid #4c4c4c;
+            border-bottom: 0px;
+            border-radius: 8px 8px 0px 0px;
+            border-color: dimgray #4c4c4c #696969 #b2b2b2;
+            padding: 2px 8px 4px 8px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+    }
+
+    #btn_reset_all {
+        background-color: var(--input-dark);
+        color: darkgray;
+        border-radius: 8px 8px 0px 0px;
+        border-color: dimgray #4c4c4c #696969 #b2b2b2;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 2px 8px 4px 8px;
+    }
+
+    #btn_reset_all:hover {
+        color: crimson;
+        transition: 0.2s;
+    }
+}
 
 .skill_bars {
     border: 4px double dimgray;
@@ -180,11 +271,12 @@ select#char_classes {
             border-top: 2px solid #00bb00;
             border-bottom: 2px solid #005500;
             height: 12px;
+            transition: 0.1s;
         }
     }
 
     .sbar_limit {
-        width: 100px;
+        width: 200px;
         border-right: 3px ridge darkblue;
     }
 
@@ -205,6 +297,7 @@ select#char_classes {
         font-size: 14px;
         color: red;
         cursor: pointer;
+        border-radius: 3px;
     }
 
     .btn_skill_incr{
@@ -219,15 +312,18 @@ select#char_classes {
         font-size: 12px;
         color: lime;
         cursor: pointer;
+        border-radius: 3px;
     }
 
     .btn_skill_decr:hover {
         background-color: rgb(80, 0, 0);
         background-color: rgb(80, 0, 0);
+        transition: 0.1s;
     }
 
     .btn_skill_incr:hover {
         background-color: rgb(0, 90, 0);
         background-color: rgb(0, 90, 0);
+        transition: 0.1s;
     }
 }
